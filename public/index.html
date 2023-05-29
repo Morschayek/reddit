@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Subreddit Search</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <img class="background-img" src="https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Foreground Image">
+  <div id="resultsDiv"></div>
+  <div class="head">
+    <h1 class="title">Subreddit Search</h1>
+    <div class="container">
+      <input class="search_bar" type="text" id="subredditInput" placeholder="Enter a subreddit name">
+      <button class="button" onclick="searchSubreddit()">Search</button>
+    </div>
+  </div>
+  <div id="results"></div>
+
+  <script>
+    function searchSubreddit() {
+      var subredditInput = document.getElementById('subredditInput').value;
+      console.log(subredditInput);
+      fetch(`/api/search/${subredditInput}`)
+        .then(response => response.json())
+        .then(data => displayResults(data))
+        .catch(error => console.error(error));
+    }
+
+    function displayResults(data) {
+    var resultsDiv = document.getElementById('results');
+    resultsDiv.innerHTML = '';
+
+    if (data.error) {
+      var errorContainer = document.createElement('div');
+      errorContainer.classList.add('container1');
+
+      var errorParagraph = document.createElement('p');
+      errorParagraph.classList.add('title1');
+      errorParagraph.innerHTML = `Error: ${data.error}`;
+      errorContainer.appendChild(errorParagraph);
+
+      var reasonParagraph = document.createElement('p');
+      reasonParagraph.classList.add('title2');
+      reasonParagraph.innerHTML = `Reason: ${data.message}`;
+      errorContainer.appendChild(reasonParagraph);
+
+      if (data.related_subreddits.length > 0) {
+        var relatedSubreddits = data.related_subreddits.join(', ');
+        var relatedSubredditsParagraph = document.createElement('p');
+        relatedSubredditsParagraph.classList.add('info');
+        relatedSubredditsParagraph.innerHTML = `Related subreddits: ${relatedSubreddits}`;
+        errorContainer.appendChild(relatedSubredditsParagraph);
+      }
+
+      resultsDiv.appendChild(errorContainer);
+    } else {
+      displaySubreddit(resultsDiv, data);
+    }
+  }
+
+    function displaySubreddit(resultsDiv, data) {
+      var subredditInfo = data.info;
+      var posts = data.posts;
+
+      var subredditInfoDiv = document.createElement('div');
+      subredditInfoDiv.classList.add('container1');
+
+      var heading = document.createElement('h2');
+      heading.classList.add('heading');
+      heading.textContent = 'Subreddit Information';
+
+      var title1 = document.createElement('p');
+      title1.classList.add('title1');
+      title1.textContent = subredditInfo.title;
+      subredditInfoDiv.appendChild(title1);
+
+      var title2 = document.createElement('p');
+      title2.classList.add('title2');
+      title2.textContent = 'Subscribers: ' + subredditInfo.subscribers;
+      subredditInfoDiv.appendChild(title2);
+
+      var info = document.createElement('p');
+      info.classList.add('info');
+      info.textContent = 'Description: ' + subredditInfo.public_description;
+      subredditInfoDiv.appendChild(info);
+
+      resultsDiv.appendChild(heading);
+      resultsDiv.appendChild(subredditInfoDiv);
+
+      var postsDiv = document.createElement('div');
+      postsDiv.innerHTML = '<h2 class="heading">Posts</h2>';
+
+      if (posts.length > 0) {
+        var postsList = document.createElement('ul');
+
+        posts.forEach(function(post) {
+          var postItem = document.createElement('li');
+          postItem.classList.add('post-item');
+
+          var titleParagraph = document.createElement('p');
+          titleParagraph.innerHTML = `${post.title}`;
+          titleParagraph.classList.add('post-title'); 
+          postItem.appendChild(titleParagraph);
+
+          var authorParagraph = document.createElement('p');
+          authorParagraph.innerHTML = `${post.author}`;
+          authorParagraph.classList.add('post-author');
+          postItem.appendChild(authorParagraph);
+
+          var contentParagraph = document.createElement('p');
+          contentParagraph.innerHTML = `${post.selftext}`;
+          contentParagraph.classList.add('post-content');
+          postItem.appendChild(contentParagraph);
+
+          var scoreParagraph = document.createElement('p');
+          scoreParagraph.innerHTML = `Score: ${post.score}`;
+          scoreParagraph.classList.add('post-score');
+          postItem.appendChild(scoreParagraph);
+
+          var originalContentParagraph = document.createElement('p');
+          originalContentParagraph.innerHTML = `Original content: ${post.is_original_content}`;
+          originalContentParagraph.classList.add('post-original-content');
+          postItem.appendChild(originalContentParagraph);
+
+          if (post.is_original_content) {
+            originalContentParagraph.classList.add('true'); 
+          } else {
+            originalContentParagraph.classList.add('false'); 
+          }
+
+
+          postsList.appendChild(postItem);
+        });
+
+        postsDiv.appendChild(postsList);
+      } else {
+        postsDiv.innerHTML += '<p class="no-posts">No posts found.</p>';
+      }
+
+      resultsDiv.appendChild(postsDiv);
+    }
+  </script>
+</body>
+</html>
