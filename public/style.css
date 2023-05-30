@@ -1,221 +1,221 @@
 html, body {
-height: 100%;
-margin: 0;
-padding: 0;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-background-image: url('https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
-position: relative;
-background-size: cover;
-background-repeat:repeat;
+    background-image: url('https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    position: relative;
+    background-size: cover;
+    background-repeat:repeat;
 }
 
 .background-img {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 .head {background-color: rgba(34, 93, 138, 0.6); padding: 40px 38px; margin-bottom: 30px;}
 
 .head .title {
-display: block;
-color: #FFFFFF;
-font-size: 4.0625em;
-margin-bottom: 5px;
-font-family: 'Open Sans Condensed', sans-serif;
-text-align: center;
+    display: block;
+    color: #FFFFFF;
+    font-size: 4.0625em;
+    margin-bottom: 5px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-align: center;
 }
 
 .head .container {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 
 .head .container .search_bar {
-margin: 10px auto;
-margin-right: 5px;
-width: 100%;
-max-width: 700px; 
-font-size: 1.5em;
-font-family: 'Open Sans Condensed', sans-serif;
-background-color: #f0f0ec;
-color: #121212;
-border: none;
-border-radius: 5px;
-padding: 12px 5px;
+    margin: 10px auto;
+    margin-right: 5px;
+    width: 100%;
+    max-width: 700px; 
+    font-size: 1.5em;
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: #f0f0ec;
+    color: #121212;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 5px;
 }
 
 .head .container .button {
-margin: 10px auto;
-margin-left: 5px;
-width: 100%;
-max-width: 200px; 
-display: block;
-padding: 12px 5px;
-box-sizing: border-box;
-background-color: #052c60;
-color: #fff;
-font-size: 1.2em;
-box-shadow: none;
-font-weight: 300;
-text-align: center;
-border-radius: 5px;
-border: 1px solid #fff;
+    margin: 10px auto;
+    margin-left: 5px;
+    width: 100%;
+    max-width: 200px; 
+    display: block;
+    padding: 12px 5px;
+    box-sizing: border-box;
+    background-color: #052c60;
+    color: #fff;
+    font-size: 1.2em;
+    box-shadow: none;
+    font-weight: 300;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #fff;
 }
 
 .head .container .button:hover, .head .container .button:focus {
-background-color:#225d8a;
+    background-color:#225d8a;
 }
 
 
 .heading {
-font-size: 3em;
-color:  #fff;
-font-family: 'Open Sans Condensed', sans-serif;
-font-weight: 600;
-text-align: center;
-position: relative; 
-margin: 0;
-padding: 0;
-margin-bottom: 20px;
+    font-size: 3em;
+    color:  #fff;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    position: relative; 
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
 
 }
 
 .post-item {
-list-style-type: none;
-padding: 7px 5px;
-box-sizing: border-box;
-margin-bottom: 20px;
-margin-right: 40px;
-border-radius: 15px;
-background-color: rgba(191, 193, 158, 0.8);
+    list-style-type: none;
+    padding: 7px 5px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    margin-right: 40px;
+    border-radius: 15px;
+    background-color: rgba(191, 193, 158, 0.8);
 }
 
 .post-item .post-title {
-font-size: 1.5em;
-color: #fff;
-font-family: 'Open Sans Condensed', sans-serif;
-font-weight: 500;
-text-align: center;
-position: relative; 
+    font-size: 1.5em;
+    color: #fff;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    position: relative; 
 }
 
 .post-item .post-author {
-font-size: 1em;
-color: #fff;
-font-family: 'Open Sans Condensed', sans-serif;
-font-weight: 500;
-text-align: center;
-position: relative;
+    font-size: 1em;
+    color: #fff;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    position: relative;
 }
 
 .post-item .post-content {
-font-size: 1em;
-color: #fff;
-font-family: 'Open Sans Condensed', sans-serif;
-font-weight: 400;
-margin-left: 5px;
-white-space: pre-line;
-line-height: 1.5;
+    font-size: 1em;
+    color: #fff;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 400;
+    margin-left: 5px;
+    white-space: pre-line;
+    line-height: 1.5;
 }
 
 .post-item .post-score {
-box-sizing: border-box;
-background:  #3f6da1;
-padding: 5px 5px;
-width: 100%;
-max-width: 100px;
-font-size: 1em;
-color: #fff;
-font-family: 'Open Sans Condensed', sans-serif;
-font-weight: 500;
-text-align: center;
-position: relative;
+    box-sizing: border-box;
+    background:  #3f6da1;
+    padding: 5px 5px;
+    width: 100%;
+    max-width: 100px;
+    font-size: 1em;
+    color: #fff;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    position: relative;
 }
 
 .post-item .post-original-content.true {
-box-sizing: border-box;
-background: #089648;
-padding: 5px 5px;
-width: 100%;
-max-width: 150px;
-font-size: 1em;
-color: #fff;
-font-family: 'Open Sans Condensed', sans-serif;
-font-weight: 500;
-text-align: center;
-position: relative;
+    box-sizing: border-box;
+    background: #089648;
+    padding: 5px 5px;
+    width: 100%;
+    max-width: 150px;
+    font-size: 1em;
+    color: #fff;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    position: relative;
 }
 
 .post-item .post-original-content.false {
-box-sizing: border-box;
-background: #a20909;
-padding: 5px 5px;
-width: 100%;
-max-width: 150px;
-font-size: 1em;
-color: #fff;
-font-family: 'Open Sans Condensed', sans-serif;
-font-weight: 500;
-text-align: center;
-position: relative;
+    box-sizing: border-box;
+    background: #a20909;
+    padding: 5px 5px;
+    width: 100%;
+    max-width: 150px;
+    font-size: 1em;
+    color: #fff;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    position: relative;
 }
 
 .container1 {
-list-style-type: none;
-padding: 7px 5px;
-box-sizing: border-box;
-margin-bottom: 20px;
-margin-right: 40px;
-margin-left: 40px;
-border-radius: 15px;
-background-color: rgba(34, 93, 138, 0.6);
+    list-style-type: none;
+    padding: 7px 5px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    margin-right: 40px;
+    margin-left: 40px;
+    border-radius: 15px;
+    background-color: rgba(34, 93, 138, 0.6);
 }
 
 .container1 .title1 {
-font-size: 1.5em;
-color: #fff;
-font-family: 'Open Sans Condensed', sans-serif;
-font-weight: 500;
-text-align: center;
-position: relative; 
+    font-size: 1.5em;
+    color: #fff;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    position: relative; 
 }
 
 .container1 .title2 {
-font-size: 1em;
-color: #fff;
-font-family: 'Open Sans Condensed', sans-serif;
-font-weight: 500;
-text-align: center;
-position: relative;
+    font-size: 1em;
+    color: #fff;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    position: relative;
 }
 
 .container1 .info{
-font-size: 1em;
-color: #fff;
-font-family: 'Open Sans Condensed', sans-serif;
-font-weight: 400;
-text-align: center;
-white-space: pre-line;
-line-height: 1.5;
+    font-size: 1em;
+    color: #fff;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    white-space: pre-line;
+    line-height: 1.5;
 
 }
 
 .no-posts{
-font-size: 1em;
-color: #fff;
-font-family: 'Open Sans Condensed', sans-serif;
-font-weight: 400;
-text-align: center;
-white-space: pre-line;
-line-height: 1.5;
+    font-size: 1em;
+    color: #fff;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 400;
+    text-align: center;
+    white-space: pre-line;
+    line-height: 1.5;
 }
 
 

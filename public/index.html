@@ -27,36 +27,36 @@
     }
 
     function displayResults(data) {
-    var resultsDiv = document.getElementById('results');
-    resultsDiv.innerHTML = '';
+      var resultsDiv = document.getElementById('results');
+      resultsDiv.innerHTML = '';
 
-    if (data.error) {
-      var errorContainer = document.createElement('div');
-      errorContainer.classList.add('container1');
+      if (data.error) {
+        var errorContainer = document.createElement('div');
+        errorContainer.classList.add('container1');
 
-      var errorParagraph = document.createElement('p');
-      errorParagraph.classList.add('title1');
-      errorParagraph.innerHTML = `Error: ${data.error}`;
-      errorContainer.appendChild(errorParagraph);
+        var errorParagraph = document.createElement('p');
+        errorParagraph.classList.add('title1');
+        errorParagraph.innerHTML = `Error: ${data.error}`;
+        errorContainer.appendChild(errorParagraph);
 
-      var reasonParagraph = document.createElement('p');
-      reasonParagraph.classList.add('title2');
-      reasonParagraph.innerHTML = `Reason: ${data.message}`;
-      errorContainer.appendChild(reasonParagraph);
+        var reasonParagraph = document.createElement('p');
+        reasonParagraph.classList.add('title2');
+        reasonParagraph.innerHTML = `Reason: ${data.message}`;
+        errorContainer.appendChild(reasonParagraph);
 
-      if (data.related_subreddits.length > 0) {
-        var relatedSubreddits = data.related_subreddits.join(', ');
-        var relatedSubredditsParagraph = document.createElement('p');
-        relatedSubredditsParagraph.classList.add('info');
-        relatedSubredditsParagraph.innerHTML = `Related subreddits: ${relatedSubreddits}`;
-        errorContainer.appendChild(relatedSubredditsParagraph);
+        if (data.related_subreddits.length > 0) {
+          var relatedSubreddits = data.related_subreddits.join(', ');
+          var relatedSubredditsParagraph = document.createElement('p');
+          relatedSubredditsParagraph.classList.add('info');
+          relatedSubredditsParagraph.innerHTML = `Related subreddits: ${relatedSubreddits}`;
+          errorContainer.appendChild(relatedSubredditsParagraph);
+        }
+
+        resultsDiv.appendChild(errorContainer);
+      } else {
+        displaySubreddit(resultsDiv, data);
       }
-
-      resultsDiv.appendChild(errorContainer);
-    } else {
-      displaySubreddit(resultsDiv, data);
     }
-  }
 
     function displaySubreddit(resultsDiv, data) {
       var subredditInfo = data.info;

@@ -1,13 +1,23 @@
-const express = require('express');
-const axios = require('axios');
+import express from 'express'
+import axios from 'axios'
+import path from "path"
+
+import { fileURLToPath } from 'url';
+
+const port = process.env.PORT || 5000;
 const app = express();
-const port = 3000;
 
-app.use(express.static('public')); 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/public/index.html'); 
-});
+
+// Connect all the files in public to `/` get API. 
+app.use(express.static(path.join(__dirname, 'public'))); 
+
+// Because of the above line no need to add get for index.html 
+// app.get('/', (req, res) => {    
+//     res.sendFile('index.html', {root: path.join(__dirname, 'public')});
+// });
 
 
 const InfoSelectedFields = [

@@ -1,3 +1,6 @@
+# Link to Deploy
+https://reddit-opal-two.vercel.app
+
 # frameworks and tools I used :
 1. for my server i used express framework 
 2. for the frontend i used css and html 
@@ -7,7 +10,7 @@
 2. run: `npm install`
 3. run: `node index.js`
 
-Now you can go to your chrome and insert the following url: localhost:3000
+Now you can go to your chrome and insert the following url: localhost:5001
 
 # An overview of how my application works :
 1. index.html file acts as a bridge between the server and the client, allowing me to retrieve data from the server and display it to the user. Inside the index.html file, I define the structure and content of my web page using HTML elements. These elements allow me to create a logical layout and organize my content effectively. To make my web page visually appealing and styled, I utilize the style.css file. In this file, I define CSS rules and selectors that target specific HTML elements. To establish the connection between the index.html file and the style.css file, I use the <link> tag within the <head> section of my HTML file. By separating the structure and content (HTML) from the visual design (CSS), I can maintain a clear and organized codebase. The HTML file focuses on defining the layout and content structure, while the CSS file handles the presentation and styling aspects.
